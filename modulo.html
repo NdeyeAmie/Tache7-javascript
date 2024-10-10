@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          body {
+            font-family: Arial, sans-serif; /* Police d'écriture */
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            text-align: center; 
+        }
+
+        h1 {
+            color: #333; 
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            margin: 10px; 
+            border: 1px solid #ccc;
+            border-radius: 5px; 
+            width: 200px; 
+        }
+
+        button {
+            padding: 10px 15px; 
+            background-color: #28a745; 
+            color: white; 
+            border: none; 
+            border-radius: 5px;
+            cursor: pointer; 
+            font-size: 16px; 
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        p {
+            font-size: 18px; 
+            color: #555; 
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculer le Modulo d'un Nombre</h1>
+    
+    <label for="nombre">Entrez un nombre :</label>
+    <input type="number" id="nombre" placeholder="Ex: 21">
+    <button onclick="calculeModulo()">Voir Résultat</button>
+    
+    <p id="resultat"></p>
+
+    <script>
+        function calculeModulo   () {
+       let nombre = document.getElementById("nombre").value;
+
+       nombre = Number(nombre)
+
+       let resteDivision = nombre % 4;
+       console.log(resteDivision);
+       document.getElementById("resultat").textContent = "Si l'on divise " + nombre + " par 4, le reste est de " + resteDivision + ".";
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcul de la Moyenne des Notes</title>
+</head>
+<body>
+
+    <script>
+        // Demander à l'utilisateur le nombre de notes
+        // parseInt() convertit ce que l'utilisateur a entré (texte) en un nombre entier.
+let nombreDeNotes = parseInt(prompt("Entrez le nombre de notes :"));
+
+// Vérifier si nombreDeNotes est un nombre positif
+if (nombreDeNotes > 0) {
+    let total = 0;
+    let notes = [];
+
+    // Boucle pour demander et calculer la somme des notes
+    for (let i = 1; i <= nombreDeNotes; i++) {
+         // parseFloat() convertit cette note (qui est un texte) en nombre décimal.
+        let note = parseFloat(prompt("Entrez la note #" + i + " :"));
+        
+        // Ajouter la note à la somme totale
+        total += note;
+        
+        // Ajouter la note au tableau des notes
+        notes.push(note);
+    }
+
+    // Calculer la moyenne
+    let moyenne = total / nombreDeNotes;
+
+    // Compter le nombre d'élèves avec une note supérieure à la moyenne
+    let nombreSuperieurMoyenne = 0;
+    for (let note of notes) {
+        if (note > moyenne) {
+            nombreSuperieurMoyenne++;
+        }
+    }
+
+    // Afficher la moyenne et le nombre d'élèves au-dessus de la moyenne
+    alert("La moyenne de la classe est : " + moyenne.toFixed(2));
+    alert("Le nombre d'élèves avec une note supérieure à la moyenne est : " + nombreSuperieurMoyenne);
+} else {
+    alert("Nombre de notes invalide. Veuillez entrer un nombre positif.");
+}
+
+
+    </script>
+</body>
+</html>
